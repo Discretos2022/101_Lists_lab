@@ -19,4 +19,23 @@ class Node(i:String, n:Node) {
       return 1
   }
 
+  def getNext(): Node = {
+    if(next == null)
+      return this
+    else
+      return next.getNext()
+  }
+
+
+  def isPresent(e:String): Boolean = {
+    if(item == e)
+      return true
+    else {
+      if(next != null)
+        return next.isPresent(e)
+      else
+        return false
+    }
+  }
+
 }

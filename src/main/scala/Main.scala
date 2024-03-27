@@ -13,4 +13,15 @@ object Main extends App{
   linkedList.addToStart("Tokyo")
   println(linkedList.toString)
 
+
+  println(linkedList.getLastElement().item)
+
+  linkedList.removeFirstElement()
+  println(linkedList.toString)
+
+  linkedList.addToEnd("Discland")
+  println(linkedList.toString)
+
+  println(linkedList.isPresent("DiscLand"))
+
 }
