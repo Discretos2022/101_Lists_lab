@@ -38,4 +38,52 @@ class Node(i:String, n:Node) {
     }
   }
 
+
+  def findElement(e: String): Node = {
+    if (item == e)
+      return this
+    else {
+      if (next != null)
+        return next.findElement(e)
+      else
+        return null
+    }
+  }
+
+
+  def removeLast(): Unit = {
+    if(next.next == null)
+      next = null
+    else
+      next.removeLast()
+  }
+
+
+  def insertBefore(before:String, n:String): Boolean = {
+
+    if (item == before) {
+      next = new Node(n, next)
+      return true
+    };
+
+    if(next != null)
+      return next.insertBefore(before, n)
+    else
+      return false;
+
+  }
+
+
+
+  def removeElement(e:String): Unit = {
+    if(next != null){
+      if (next.item == e)
+        next = next.next
+      else
+        next.removeElement(e)
+    }
+
+
+  }
+
 }
